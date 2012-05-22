@@ -1,0 +1,38 @@
+#
+# Copyright (c) 2012 Shotgun Software, Inc
+# ----------------------------------------------------
+#
+# Metadata defining the behaviour and requirements for this app
+
+
+# expected fields in the configuration file for this app
+configuration:
+    entity_types:
+        type: list
+        values: {type: shotgun_entity_type}
+        default_value: [Version]
+    
+    deny_permissions:
+        type: list
+        values: {type: shotgun_permission_group}
+        allows_empty: True
+    
+    deny_platforms:
+        type: list
+        values: {type: str}
+        allows_empty: True
+    
+    rv_path_windows:       
+        type: str
+        description: The path to the Rv executable on Windows.  
+    rv_path_linux:       
+        type: str
+        description: The path to the Rv executable on Linux.  
+    rv_path_mac:       
+        type: str
+        description: The path to the Rv executable on Macosx.              
+
+
+# the Shotgun fields that this app needs in order to operate correctly
+requires_shotgun_fields:
+
