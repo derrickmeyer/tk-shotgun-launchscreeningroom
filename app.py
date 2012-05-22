@@ -17,7 +17,7 @@ class LaunchRevolver(tank.system.Application):
         deny_platforms = self.get_setting("deny_platforms")
         
         p = {
-            "title": "Show in File System",
+            "title": "Show in Revolver",
             "entity_types": entity_types,
             "deny_permissions": deny_permissions,
             "deny_platforms": deny_platforms,
