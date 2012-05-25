@@ -10,7 +10,7 @@ import sys
 import os
 import platform
 
-class LaunchRevolver(tank.system.Application):
+class LaunchRevolver(tank.platform.Application):
     def init_app(self):
         entity_types = self.get_setting("entity_types")
         deny_permissions = self.get_setting("deny_permissions")
