@@ -46,14 +46,14 @@ class LaunchRevolver(tank.platform.Application):
         return app_path
     
     def launch_revolver(self, entity_type, entity_ids):
-        import sg_launch_revolver
+        import tk_shotgun_launchrevolver
         
         if len(entity_ids) != 1:
             raise Exception("This action does not work with multiple selection.")
 
         ctx = {"type" : entity_type, "id": entity_ids[0]}
         try:
-            sg_launch_revolver.revolver.launch_timeline( base_url=self.engine.shotgun.base_url, 
+            tk_shotgun_launchrevolver.revolver.launch_timeline( base_url=self.engine.shotgun.base_url, 
                                                          context=ctx,
                                                          path_to_rv=self._get_rv_binary() )
         except Exception, e:
