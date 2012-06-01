@@ -53,11 +53,11 @@ class LaunchRevolver(tank.platform.Application):
 
         ctx = {"type" : entity_type, "id": entity_ids[0]}
         try:
-            tk_shotgun_launchrevolver.revolver.launch_timeline( base_url=self.engine.shotgun.base_url, 
-                                                         context=ctx,
-                                                         path_to_rv=self._get_rv_binary() )
+            tk_shotgun_launchrevolver.revolver.launch_timeline(base_url=self.shotgun.base_url, 
+                                                            context=ctx,
+                                                            path_to_rv=self._get_rv_binary())
         except Exception, e:
-            self.engine.log_error("Could not launch revolver - check your configuration! "
-                                  "Error reported: %s" % e)
+            self.log_error("Could not launch revolver - check your configuration! "
+                            "Error reported: %s" % e)
 
     
