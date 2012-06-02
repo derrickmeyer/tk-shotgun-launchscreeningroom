@@ -7,10 +7,6 @@
 
 # expected fields in the configuration file for this app
 configuration:
-    entity_types:
-        type: list
-        values: {type: shotgun_entity_type}
-        default_value: [Version]
     
     deny_permissions:
         type: list

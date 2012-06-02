@@ -12,13 +12,12 @@ import platform
 
 class LaunchRevolver(tank.platform.Application):
     def init_app(self):
-        entity_types = self.get_setting("entity_types")
         deny_permissions = self.get_setting("deny_permissions")
         deny_platforms = self.get_setting("deny_platforms")
         
         p = {
             "title": "Show in Revolver",
-            "entity_types": entity_types,
+            "entity_types": ["Version"],
             "deny_permissions": deny_permissions,
             "deny_platforms": deny_platforms,
             "supports_multiple_selection": False
