@@ -28,13 +28,16 @@ configuration:
         
     rv_path_windows:       
         type: str
-        description: The path to the Rv executable on Windows.  
+        description: The path to the Rv executable on Windows. 
+        default_value: "C:\\Program Files\\RV\\RV64.exe"
     rv_path_linux:       
         type: str
-        description: The path to the Rv executable on Linux.  
+        description: The path to the Rv executable on Linux.
+        default_value: "rv"  
     rv_path_mac:       
         type: str
-        description: The path to the Rv executable on Macosx.              
+        description: The path to the Rv executable on Macosx.
+        default_value: "/Applications/RV64.app"              
 
 
 # the Shotgun fields that this app needs in order to operate correctly
