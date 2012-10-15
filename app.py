@@ -45,7 +45,7 @@ class LaunchRevolver(tank.platform.Application):
         return app_path
     
     def launch_revolver(self, entity_type, entity_ids):
-        import tk_shotgun_launchrevolver
+        tk_shotgun_launchrevolver = self.import_module("tk_shotgun_launchrevolver")
         
         if len(entity_ids) != 1:
             raise Exception("This action does not work with multiple selection.")
