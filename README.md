@@ -1,4 +1,4 @@
-tk-shotgun-launchrevolver
-=========================
+tk-shotgun-launchscreeningroom
+==============================
 
-Tank Shotgun Revolver Launcher
+Tank Shotgun Screening Room Launcher

@@ -2,27 +2,27 @@
 Copyright (c) 2012 Shotgun Software, Inc
 ----------------------------------------------------
 
-App that launches Revolver from inside of Shotgun
+App that launches Screening Room from inside of Shotgun
 """
 
 import tank
 import sys
 import os
 
-class LaunchRevolver(tank.platform.Application):
+class LaunchScreeningRoom(tank.platform.Application):
     def init_app(self):
         deny_permissions = self.get_setting("deny_permissions")
         deny_platforms = self.get_setting("deny_platforms")
         
         p = {
-            "title": "Show in Revolver",
+            "title": "Show in Screening Room",
             "entity_types": ["Version"],
             "deny_permissions": deny_permissions,
             "deny_platforms": deny_platforms,
             "supports_multiple_selection": False
         }
         
-        self.engine.register_command("launch_revolver", self.launch_revolver, p)
+        self.engine.register_command("launch_screeningroom", self.launch_screeningroom, p)
     
     def _get_rv_binary(self):
         """
@@ -43,19 +43,19 @@ class LaunchRevolver(tank.platform.Application):
         
         return app_path
     
-    def launch_revolver(self, entity_type, entity_ids):
-        tk_shotgun_launchrevolver = self.import_module("tk_shotgun_launchrevolver")
+    def launch_screeningroom(self, entity_type, entity_ids):
+        tk_shotgun_launchscreeningroom = self.import_module("tk_shotgun_launchscreeningroom")
         
         if len(entity_ids) != 1:
             raise Exception("This action does not work with multiple selection.")
 
         ctx = {"type" : entity_type, "id": entity_ids[0]}
         try:
-            tk_shotgun_launchrevolver.revolver.launch_timeline(base_url=self.shotgun.base_url, 
+            tk_shotgun_launchscreeningroom.screeningroom.launch_timeline(base_url=self.shotgun.base_url, 
                                                             context=ctx,
                                                             path_to_rv=self._get_rv_binary())
         except Exception, e:
-            self.log_error("Could not launch revolver - check your configuration! "
+            self.log_error("Could not launch Screening Room - check your configuration! "
                             "Error reported: %s" % e)
 
     
