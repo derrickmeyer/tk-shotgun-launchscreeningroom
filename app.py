@@ -16,7 +16,6 @@ class LaunchScreeningRoom(tank.platform.Application):
         
         p = {
             "title": "Show in Screening Room",
-            "entity_types": ["Version"],
             "deny_permissions": deny_permissions,
             "deny_platforms": deny_platforms,
             "supports_multiple_selection": False
@@ -45,6 +44,12 @@ class LaunchScreeningRoom(tank.platform.Application):
     
     def launch_screeningroom(self, entity_type, entity_ids):
         tk_shotgun_launchscreeningroom = self.import_module("tk_shotgun_launchscreeningroom")
+        
+        SUPPORTED_TYPES = ['Version', 'Asset', 'Sequence', 'Shot', 'Playlist']
+        
+        if entity_type not in SUPPORTED_TYPES:
+            raise Exception("Sorry, this app only works with the "
+                            "following entity types: %s" % ", ".join(SUPPORTED_TYPES))
         
         if len(entity_ids) != 1:
             raise Exception("This action does not work with multiple selection.")
