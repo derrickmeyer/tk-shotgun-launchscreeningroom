@@ -1,4 +1,4 @@
 tk-shotgun-launchscreeningroom
 ==============================
 
-Tank Shotgun Screening Room Launcher
+Shotgun Pipeline Toolkit Screening Room Launcher
